@@ -1,0 +1,15 @@
+h1 {
+    width: 100%;
+    text-align: left;
+}
+#instruction{
+    float: right;
+}
+img{
+    width: 100%;
+}
+video{
+    background: url("game_console.png");
+    background-size: cover;
+    background-position: center;
+}

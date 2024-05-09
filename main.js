@@ -1,10 +1,10 @@
-img="";
-noseX=0;
-noseY=0;
-marioX=0;
-marioY=0;
+
 function preload() {
-	img=loadImage("mario05.png");
+	mario_gameover=loadSound("gameover.wav");
+	mario_jump=loadSound("jump.wav");
+	mario_coin=loadSound("coin.wav");
+	mario_kick=loadSound("kick.wav");
+	mario_die=loadSound("mariodie.wav");
 	world_start = loadSound("world_start.wav");
 	setSprites();
 	MarioAnimation();
@@ -21,24 +21,25 @@ function setup() {
 	 poseNet.on('pose', gotPoses);
 }
 
-function draw() {
-	image(img, marioX, marioY, 40, 70);
-	game()
-}
+
 function modelLoaded()
 {
 	console.log("Tu modelo ha cargado");
 	
 }
-function gotPoses()
+function gotPoses(results)
 {
 	if(results.length>0)
 	{
 		noseX=results[0].pose.nose.x;
 	noseY=results[0].pose.nose.y;
 	}
-}
 
+}
+function draw() {
+	
+	game()
+}
 
 
 
